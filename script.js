@@ -109,7 +109,7 @@ function abortBookForm() {
 }
 
 // Transition from Book Form to Book Table
-function formToTable(){
+function formToTable() {
   bookForm.reset();
   newBooks = [];
   bookForm.style.display = "none";
