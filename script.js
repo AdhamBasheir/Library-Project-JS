@@ -3,8 +3,8 @@
 
 // variables
 const booksNumberForm = document.getElementById("booksNumberForm");
-const integerInput = document.getElementById("integer");
-const integerError = document.getElementById("integerError");
+const booksNumberInput = document.getElementById("booksNumber");
+const booksNumberError = document.getElementById("booksNumberError");
 
 const bookForm = document.getElementById("bookForm");
 const booksTable = document.getElementById("booksTable");
@@ -50,10 +50,10 @@ deleteBooksBtn.addEventListener("click", deleteBooksTable);
 
 // form handlers
 function numberBook() {
-  const value = parseFloat(integerInput.value);
+  const value = parseFloat(booksNumberInput.value);
 
   if (!isPositiveInteger(value)) {
-    integerError.textContent = "Please enter a positive integer.";
+    booksNumberError.textContent = "Please enter a positive integer.";
   }
   else {
     clearBooksNumberForm();
@@ -190,6 +190,7 @@ function deleteBook(event) {
 
     if (booksData.length === 0) {
       booksTable.style.display = "none";
+      deleteBooksBtn.style.display = "none";
     }
   }
 }
@@ -263,8 +264,8 @@ function confirmCancelBtns(row) {
 }
 
 function clearBooksNumberForm() {
-  integerInput.value = "";
-  integerError.textContent = "";
+  booksNumberInput.value = "";
+  booksNumberError.textContent = "";
 }
 
 // validation and errors
